@@ -20,7 +20,7 @@ const PropertySchema = new Schema(
       required: true,
     },
     location: {
-      stret: String,
+      street: String,
       city: String,
       state: String,
       zipcode: String,

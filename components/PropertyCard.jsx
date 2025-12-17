@@ -5,10 +5,10 @@ import {
   FaBath,
   FaRulerCombined,
   FaMoneyBill,
-  FaLocationDot ,
+  FaLocationDot,
 } from 'react-icons/fa6';
 
-const PorpertyCard = ({ property }) => {
+const PropertyCard = ({ property }) => {
   const getRateDisplay = () => {
     const rate = property.rates.monthly
       ? { value: property.rates.monthly, type: 'mo' }
@@ -20,13 +20,15 @@ const PorpertyCard = ({ property }) => {
 
   return (
     <div className="rounded-xl shadow-md relative">
-      <Image
-        src={`/properties/${property.images[0]}`}
-        alt=""
-        width={500}
-        height={500}
-        className="w-full h-auto rounded-t-xl"
-      />
+      <Link href={`/properties/${property._id}`}>
+        <Image
+          src={`${property.images[0]}`}
+          alt=""
+          width={500}
+          height={500}
+          className="w-full h-auto rounded-t-xl"
+        />
+      </Link>
       <div className="p-4">
         <div className="text-left md:text-center lg:text-left mb-6">
           <div className="text-gray-600">{property.type}</div>
@@ -63,9 +65,9 @@ const PorpertyCard = ({ property }) => {
 
         <div className="border border-gray-100 mb-5"></div>
 
-        <div className="flex flex-col lg:flex-row justify-between mb-4">
-          <div className="flex align-middle justify-center items-center gap-2 mb-4 lg:mb-0">
-            <FaLocationDot  className="text-orange-700 text-sm" />
+        <div className="flex flex-col lg:flex-row gap-2 justify-between mb-4">
+          <div className="flex justify-center items-top gap-2 mb-4 lg:mb-0">
+            <FaLocationDot className="text-orange-700 mt-1 text-sm" />
             <span className="text-orange-700">
               {property.location.city}, {property.location.state}
             </span>
@@ -84,4 +86,4 @@ const PorpertyCard = ({ property }) => {
   );
 };
 
-export default PorpertyCard;
+export default PropertyCard;

@@ -15,6 +15,7 @@ const InfoBox = ({ isDark, title, subtitle, linkTo, btnText }) => {
         className={`inline-block ${classes.btn} rounded-lg px-4 py-2`}
       >
         {btnText}
+        text
       </Link>
     </div>
   );
